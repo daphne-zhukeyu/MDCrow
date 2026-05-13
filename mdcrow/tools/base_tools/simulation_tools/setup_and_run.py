@@ -1,3 +1,8 @@
+'''
+This code defines a class named OpenMMSimulation, 
+designed to automate the construction, configuration, and execution of Molecular Dynamics (MD) simulations using the OpenMM library. 
+It also features the ability to automatically generate an independent Python script that can be used to reproduce the simulation.
+'''
 # Standard Library Imports
 import os
 import re
