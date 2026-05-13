@@ -1,5 +1,5 @@
 from langchain.prompts import PromptTemplate
-
+# This template guides the agent through a manual "Thought-Action-Observation" loop.
 structured_prompt = PromptTemplate(
     input_variables=["input", "context"],
     template="""
@@ -41,11 +41,15 @@ structured_prompt = PromptTemplate(
     If context is provided, you should assume
     you are continuing a chat.
 
+# Context Integration:
+# {context} is injected from MemoryManager to maintain continuity between runs.
+# {input} is the user's specific problem or simulation goal.
+
     Here is the input:
     Previous Context: {context}
     Question: {input} """,
 )
-
+### 2. OpenAI Functions Prompt 
 openaifxn_prompt = PromptTemplate(
     input_variables=["input", "context"],
     template="""
