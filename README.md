@@ -1,3 +1,33 @@
+1. Core Architecture: The "Function-Tool" Pattern
+The system follows a hierarchical design built on the LangChain framework, dividing responsibilities into two layers:
+
+Logic Layer (Functions): Classes like SASAFunctions and VisFunctions handle raw computations using scientific libraries (e.g., mdtraj, numpy) and external process calls.
+
+Interface Layer (Tools): Classes inheriting from BaseTool (e.g., SolventAccessibleSurfaceArea, VisualizeProtein) wrap the logic for AI Agent execution, defining names and descriptions for LLM discovery.
+
+2. Key Components & Files
+Analytical Tools:
+
+ComputeDSSP: Assigns secondary structure (Helix, Strand, Coil).
+
+SolventAccessibleSurfaceArea: Computes SASA using the Shrake-Rupley algorithm.
+
+ComputeAsphericity / ComputeAcylindricity: Measures molecular shape descriptors.
+
+Visualization Tools:
+
+VisualizeProtein: Implements a dual-pathway for rendering (PNG via molrender or interactive .ipynb via nglview).
+
+Infrastructure (Registry):
+
+PathRegistry: Acts as the central hub for mapping unique File IDs to physical paths, ensuring data consistency across different analysis steps.
+
+3. Workflow Summary
+Input: The PathRegistry resolves file IDs into paths.
+
+Processing: mdtraj performs trajectory analysis or structural calculations.
+
+Output: Raw data is saved as .npy/.csv, and visuals are saved as .png or notebooks, all registered back to the PathRegistry.
 MDCrow is an LLM-agent based toolset for Molecular Dynamics.
 It's built using Langchain and uses a collection of tools to set up and execute molecular dynamics simulations, particularly in OpenMM.
 
