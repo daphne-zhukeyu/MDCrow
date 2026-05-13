@@ -1,3 +1,4 @@
+#This defines utility tools that allow the agent to interact with the PathRegistry to manage file mappings.
 # defining tools
 from typing import Optional
 
