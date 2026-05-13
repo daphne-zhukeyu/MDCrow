@@ -1,3 +1,4 @@
+#This code defines a tool that leverages an LLM to dynamically modify and execute OpenMM simulation scripts based on natural language user requirements.
 import os
 import textwrap
 from typing import Optional
