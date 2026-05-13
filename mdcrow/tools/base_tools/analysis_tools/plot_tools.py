@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain tool that parses OpenMM simulation CSV logs to automatically generate and save plots of physical parameters against time or steps.
+'''
+
 import csv
 import re
 from typing import Optional
