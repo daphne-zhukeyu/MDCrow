@@ -1,4 +1,8 @@
-#data acquisition
+'''
+This code provides two LangChain tools for retrieving or generating molecular structure files: 
+ProteinName2PDBTool downloads existing protein structures from the RCSB Protein Data Bank, 
+while SmallMolPDB uses RDKIT to generate 3D coordinates and PDB files for small molecules based on their names or SMILES strings.
+'''
 from typing import Optional
 
 import requests
