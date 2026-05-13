@@ -1,3 +1,9 @@
+'''
+This code defines `CleaningToolFunction`,
+a LangChain-integrated tool that utilizes PDBFixer to automate the structural refinement of protein files 
+by repairing missing residues/atoms, managing heterogens, and adding hydrogens at a specified pH.
+'''
+
 from typing import Optional, Type
 
 from langchain.tools import BaseTool
