@@ -1,3 +1,8 @@
+'''
+This script defines a set of LangChain-integrated tools for molecular dynamics analysis 
+that calculate and plot the Root Mean Square Deviation, Root Mean Square Fluctuation, and Linear-Programming RMSD 
+to evaluate the structural stability and flexibility of molecules.
+'''
 from typing import Optional, Type
 
 import matplotlib.pyplot as plt
