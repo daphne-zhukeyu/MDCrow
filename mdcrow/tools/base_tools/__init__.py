@@ -1,3 +1,4 @@
+# This file centralizes all tool imports and defines the public API for the agent.
 from .analysis_tools.bond_angles_dihedrals_tool import ComputeAngles
 from .analysis_tools.distance_tools import ContactsTool, DistanceMatrixTool
 from .analysis_tools.hydrogen_bonding_tools import HydrogenBondTool
@@ -47,6 +48,9 @@ from .simulation_tools.setup_and_run import SetUpandRunFunction
 from .util_tools.registry_tools import ListRegistryPaths, MapPath2Name
 from .util_tools.search_tools import Scholar2ResultLLM
 
+
+# The __all__ list explicitly exposes these tools to the rest of the package.
+# This allows the Agent to access any tool via 'from mdcrow.tools import ...'.
 __all__ = [
     "CleaningToolFunction",
     "ComputeAngles",
