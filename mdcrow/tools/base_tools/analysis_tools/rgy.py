@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain tool that calculates the radius of gyration for each frame of a molecular dynamics trajectory, 
+providing a time-series plot and the average value to describe the molecule's compactness.
+'''
 from typing import Optional
 
 import matplotlib.pyplot as plt
