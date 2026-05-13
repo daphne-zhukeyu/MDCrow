@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain-integrated tool that utilizes the MDTraj library to calculate and visualize protein backbone dihedral angles 
+and sidechain torsion angles from molecular dynamics simulation trajectory and topology files.
+'''
 from typing import Optional
 
 import matplotlib.pyplot as plt
