@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain-integrated tool that calculates and plots the Solvent Accessible Surface Area 
+for molecular structures or trajectories using the Shrake-Rupley algorithm to analyze exposure to solvent.
+'''
 from typing import Optional
 
 import matplotlib.pyplot as plt
