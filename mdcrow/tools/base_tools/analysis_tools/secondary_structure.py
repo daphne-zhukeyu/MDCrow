@@ -1,3 +1,7 @@
+'''
+This script provides a collection of LangChain-integrated tools for protein trajectory analysis, 
+enabling the calculation and visualization of secondary structures (DSSP), gyration tensors, and various molecular shape descriptors like asphericity
+'''
 from typing import Optional
 
 import matplotlib.pyplot as plt
