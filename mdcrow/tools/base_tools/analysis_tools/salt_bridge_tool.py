@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain-integrated tool that identifies, counts, and plots salt bridges in protein trajectories 
+by calculating distances between acidic and basic residues, while optionally accounting for pH-dependent protonation states.
+'''
 import matplotlib.pyplot as plt
 import mdtraj as md
 import numpy as np
