@@ -1,3 +1,8 @@
+'''
+This script defines a LangChain-integrated tool that performs Principal Component Analysis 
+on molecular dynamics (MD) trajectories to reduce data dimensionality and evaluate simulation convergence 
+through scree plots, projection visualizations, and cosine content measurements.
+'''
 import warnings
 from typing import Optional
 
