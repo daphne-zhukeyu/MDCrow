@@ -1,3 +1,7 @@
+'''
+This LangChain-integrated tool automates protein structure visualization 
+by attempting to render CIF files as PNGs via molrender or, as a fallback, generating a Jupyter Notebook configured with nglview for interactive inspection.
+'''
 import os
 import shutil
 import subprocess
