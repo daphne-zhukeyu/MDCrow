@@ -1,39 +1,61 @@
+# This workflow automates the distribution of the MDCrow package to PyPI.
 name: publish
 
 on:
+  # Trigger 1: Runs automatically when a new release is created in the GitHub repository.
   release:
     types:
       - created
+  # Trigger 2: Allows manual execution of this workflow from the GitHub Actions tab.
   workflow_dispatch:
 
 jobs:
   publish:
-
+    # Specifies the virtual environment (Runner); ubuntu-latest is a standard Linux environment.
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Downloads a copy of your repository onto the runner.
     - uses: actions/checkout@v2
+    
+    # Step 2: Initializes a Python environment specifically using version 3.11.
     - name: Set up Python "3.11"
       uses: actions/setup-python@v2
       with:
         python-version: "3.11"
+        
+    # Step 3: Installs the necessary tools for linting, testing, and building.
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        # flake8 checks code style; pytest runs logic tests; build creates the distribution files.
         pip install flake8 pytest build
+        # If the file exists, install additional development-specific requirements.
         if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi
+        
+    # Step 4: Installs the current package (mdcrow) in "editable" or standard mode for testing.
     - name: Install
       run: |
         pip install .
+        
+    # Step 5: Executes unit tests to ensure no regressions before publishing.
     - name: Run Test
       run: |
+         # Runs all test files within the /tests directory.
          pytest tests
       env:
+        # Passes the OpenAI API Key as an environment variable (Required for LLM agent testing).
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        
+    # Step 6: Packages the source code into a source tarball (.tar.gz) and a binary wheel (.whl).
     - name: Build a binary wheel and a source tarball
       run: |
+        # These files are the "products" that users actually download via pip.
         python -m build --sdist --wheel --outdir dist/ .
+        
+    # Step 7: Securely uploads the built files in /dist to the Python Package Index (PyPI).
     - name: Publish distribution 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
+        # Uses a secret Token for authentication to prevent unauthorized package uploads.
         password: ${{ secrets.PYPI_API_TOKEN }}
