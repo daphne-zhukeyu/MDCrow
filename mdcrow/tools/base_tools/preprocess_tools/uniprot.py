@@ -1,4 +1,8 @@
-#sequence and metadata handling
+'''
+This script defines a suite of LangChain-integrated tools that programmatically query the UniProt REST API to retrieve comprehensive biological data, 
+such as protein names, amino acid sequences, binding sites, and post-translational modification, 
+allowing an AI agent to perform detailed bioinformatics analysis.
+'''
 import time
 from enum import Enum
 
