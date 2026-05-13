@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain tool that calculates the principal moments of inertia for a molecule across a simulation trajectory 
+and generates a plot to visualize how these values change over time.
+'''
 from typing import Optional
 
 import matplotlib.pyplot as plt
