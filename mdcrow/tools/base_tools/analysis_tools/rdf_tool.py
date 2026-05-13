@@ -1,3 +1,8 @@
+'''
+This script defines a LangChain-integrated tool 
+that calculates the radial distribution function between a protein's backbone and water molecules using the MDTraj library 
+and generates a corresponding plot of g(r) vs r.
+'''
 from typing import List, Optional
 
 import matplotlib.pyplot as plt
