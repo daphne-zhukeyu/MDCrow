@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain tool that calculates the average minimum heavy-atom distance 
+between a peptide and a protein to analyze protein-protein interactions using the MDTraj "closest-heavy" scheme.
+'''
 import itertools
 from typing import Optional, Type
 
