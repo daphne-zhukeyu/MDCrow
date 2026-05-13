@@ -1,4 +1,7 @@
-#structure repair
+'''
+This code implements `FixPDBFile`, a LangChain tool that identifies and corrects formatting errors in Protein Data Bank (PDB) files—such as missing element types, 
+occupancy values, or temperature factors (B-factors)—by validating record structures against official specifications and applying automated spatial alignment fixes.
+'''
 import os
 import re
 import sys
