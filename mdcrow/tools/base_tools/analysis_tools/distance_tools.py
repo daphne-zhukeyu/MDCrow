@@ -1,3 +1,7 @@
+'''
+This script defines a LangChain-integrated tool that utilizes the MDTraj library to calculate and visualize residue-to-residue distance 
+and contact matrices from molecular dynamics (MD) simulation trajectory and topology files.
+'''
 import itertools
 import os
 from typing import Literal, Optional
