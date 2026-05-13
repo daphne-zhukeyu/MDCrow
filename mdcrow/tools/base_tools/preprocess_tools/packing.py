@@ -1,3 +1,8 @@
+'''
+This code defines PackMolTool, a LangChain-integrated wrapper for the Packmol software that 
+automates the creation of complex molecular systems by arranging various chemical species (proteins and small molecules) 
+within defined spatial constraints and validating the resulting PDB structure.
+'''
 import os
 import re
 import subprocess
