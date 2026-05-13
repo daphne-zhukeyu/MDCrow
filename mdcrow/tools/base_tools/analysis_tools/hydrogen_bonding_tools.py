@@ -1,3 +1,7 @@
+'''
+This defines a LangChain-integrated tool that utilizes the MDTraj library to 
+calculate and visualize hydrogen bond counts over the duration of a molecular dynamics (MD) simulation trajectory.
+'''
 import matplotlib.pyplot as plt
 import mdtraj as md
 from langchain.tools import BaseTool
